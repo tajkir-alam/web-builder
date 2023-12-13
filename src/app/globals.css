@@ -10,20 +10,13 @@
     @apply bg-[#1E1E1E];
 }
 
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
+::placeholder {
+    color: white;
+    opacity: 1;
     /* Firefox */
 }
 
-.demo-wrapper .rdw-editor-toolbar {
-    background-color: #2F3031;
-    border-color: #575757;
-    border-radius: 4px;
+::-ms-input-placeholder {
+    /* Edge 12 -18 */
+    color: white;
 }

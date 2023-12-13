@@ -2,13 +2,35 @@
 import React, { useState } from 'react';
 import { HiChevronDown } from 'react-icons/hi2';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import './TextEditor.css';
 
 
 const RightSideBar = () => {
     const [showComponents, setShowComponents] = useState(true);
     const [value, setValue] = useState('');
 
+    console.log(value);
+
+    const toolbarOptions = [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ 'color': [] }, { 'background': [] }],
+
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        [{ 'indent': '-1' }, { 'indent': '+1' }],
+        [{ 'direction': 'rtl' }],
+
+        [{ 'size': ['small', false, 'large', 'huge'] }],
+
+        [{ 'font': [] }],
+        [{ 'align': [] }],
+
+        ['clean']
+    ];
+
+    const modules = {
+        toolbar: toolbarOptions,
+    };
 
     return (
         <div className='primary-bg h-screen py-[25px] px-[15px] overflow-hidden'>
@@ -20,7 +42,12 @@ const RightSideBar = () => {
             </div>
             <h6 className='text-[#918f8f] text-sm'>Text *</h6>
 
-            <ReactQuill theme="snow" value={value} onChange={setValue} />
+            <ReactQuill
+                theme="snow"
+                value={value}
+                onChange={setValue}
+                modules={modules}
+                className='mt-4 min-h-[250px] h-auto bg-[#2F3031] border border-[#575757] rounded' />
         </div>
     );
 };
