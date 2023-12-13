@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
 import MyComponents from './MyComponents/MyComponents';
+import BasicComponents from './BasicComponents/BasicComponents';
 
 const LeftSideBar = () => {
     return (
@@ -21,7 +22,7 @@ const LeftSideBar = () => {
 
                 <hr className='my-[26px] border-[#797979]' />
 
-
+                <BasicComponents />
 
             </div>
         </div>
