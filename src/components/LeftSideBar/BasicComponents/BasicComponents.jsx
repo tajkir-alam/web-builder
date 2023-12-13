@@ -5,16 +5,25 @@ import { HiChevronDown, HiOutlinePhoto } from 'react-icons/hi2';
 
 const BasicComponents = () => {
     const [showComponents, setShowComponents] = useState(true);
+    const [componentsHidden, setComponentsHidden] = useState(false);
+
+    const showComponentMenu = () => {
+        setShowComponents(!showComponents);
+        setTimeout(() => {
+            setComponentsHidden(!componentsHidden);
+        }, 350);
+    }
+
 
     return (
         <>
             <div className='mb-4 flex items-center justify-between'>
                 <h5>Basic Components</h5>
-                <button onClick={() => setShowComponents(!showComponents)}>
+                <button onClick={showComponentMenu}>
                     <HiChevronDown className={`${showComponents ? 'rotate-0' : 'rotate-180'} duration-300`} />
                 </button>
             </div>
-            <div className={`${showComponents ? '' : '-translate-y-16 opacity-0 invisible'} grid grid-cols-3 gap-[6px] duration-300`}>
+            <div className={`${!showComponents && '-translate-y-16 opacity-0 invisible'} ${componentsHidden && 'hidden'} translate-y-0 grid grid-cols-3 gap-[6px] duration-300`}>
                 <div className="bg-[#3e3f41] hover:bg-[#4f5053] rounded flex flex-col items-center py-3 cursor-pointer">
                     <AiOutlineFontSize />
                     <p className='text-xs whitespace-nowrap mt-2'>Text</p>
@@ -25,8 +34,8 @@ const BasicComponents = () => {
                 </div>
                 <div className="bg-[#3e3f41] hover:bg-[#4f5053] rounded flex flex-col items-center py-3 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-                        <g clip-path="url(#clip0_2_139)">
-                            <path d="M7.26667 12.5V10.7M7.26667 10.7V4.70001C7.26667 4.38175 7.3931 4.07652 7.61815 3.85148C7.84319 3.62643 8.14841 3.50001 8.46667 3.50001C8.78493 3.50001 9.09016 3.62643 9.3152 3.85148C9.54025 4.07652 9.66667 4.38175 9.66667 4.70001V9.50001H13.6903C14.7823 9.50001 15.6667 10.3844 15.6667 11.4764V12.5C15.6667 13.9322 15.0977 15.3057 14.0851 16.3184C13.0724 17.3311 11.6988 17.9 10.2667 17.9H9.66667C8.39364 17.9 7.17274 17.3943 6.27256 16.4941C5.37239 15.5939 4.86667 14.373 4.86667 13.1C4.86667 12.4635 5.11953 11.853 5.56962 11.4029C6.01971 10.9529 6.63015 10.7 7.26667 10.7ZM11.4667 7.10001H13.8667C14.6623 7.10001 15.4254 6.78394 15.988 6.22133C16.5506 5.65872 16.8667 4.89566 16.8667 4.10001C16.8667 3.30436 16.5506 2.54129 15.988 1.97869C15.4254 1.41608 14.6623 1.10001 13.8667 1.10001H5.46667C4.67103 1.10001 3.90796 1.41608 3.34535 1.97869C2.78275 2.54129 2.46667 3.30436 2.46667 4.10001C2.46667 4.89566 2.78275 5.65872 3.34535 6.22133C3.90796 6.78394 4.67103 7.10001 5.46667 7.10001" stroke="#EAEAEA" stroke-width="1.2" />
+                        <g clipPath="url(#clip0_2_139)">
+                            <path d="M7.26667 12.5V10.7M7.26667 10.7V4.70001C7.26667 4.38175 7.3931 4.07652 7.61815 3.85148C7.84319 3.62643 8.14841 3.50001 8.46667 3.50001C8.78493 3.50001 9.09016 3.62643 9.3152 3.85148C9.54025 4.07652 9.66667 4.38175 9.66667 4.70001V9.50001H13.6903C14.7823 9.50001 15.6667 10.3844 15.6667 11.4764V12.5C15.6667 13.9322 15.0977 15.3057 14.0851 16.3184C13.0724 17.3311 11.6988 17.9 10.2667 17.9H9.66667C8.39364 17.9 7.17274 17.3943 6.27256 16.4941C5.37239 15.5939 4.86667 14.373 4.86667 13.1C4.86667 12.4635 5.11953 11.853 5.56962 11.4029C6.01971 10.9529 6.63015 10.7 7.26667 10.7ZM11.4667 7.10001H13.8667C14.6623 7.10001 15.4254 6.78394 15.988 6.22133C16.5506 5.65872 16.8667 4.89566 16.8667 4.10001C16.8667 3.30436 16.5506 2.54129 15.988 1.97869C15.4254 1.41608 14.6623 1.10001 13.8667 1.10001H5.46667C4.67103 1.10001 3.90796 1.41608 3.34535 1.97869C2.78275 2.54129 2.46667 3.30436 2.46667 4.10001C2.46667 4.89566 2.78275 5.65872 3.34535 6.22133C3.90796 6.78394 4.67103 7.10001 5.46667 7.10001" stroke="#EAEAEA" strokeWidth="1.2" />
                         </g>
                         <defs>
                             <clipPath id="clip0_2_139">
@@ -44,14 +53,14 @@ const BasicComponents = () => {
                 </div>
                 <div className="bg-[#3e3f41] hover:bg-[#4f5053] rounded flex flex-col items-center py-3 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                        <path d="M12.75 2.75H5.25C3.59315 2.75 2.25 4.09315 2.25 5.75V13.25C2.25 14.9069 3.59315 16.25 5.25 16.25H12.75C14.4069 16.25 15.75 14.9069 15.75 13.25V5.75C15.75 4.09315 14.4069 2.75 12.75 2.75Z" stroke="#EAEAEA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12.75 2.75H5.25C3.59315 2.75 2.25 4.09315 2.25 5.75V13.25C2.25 14.9069 3.59315 16.25 5.25 16.25H12.75C14.4069 16.25 15.75 14.9069 15.75 13.25V5.75C15.75 4.09315 14.4069 2.75 12.75 2.75Z" stroke="#EAEAEA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <p className='text-xs whitespace-nowrap mt-2'>Box</p>
                 </div>
                 <div className="bg-[#3e3f41] hover:bg-[#4f5053] rounded flex flex-col items-center py-3 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-                        <path d="M9.66669 5L3.66669 8L9.66669 11L15.6667 8L9.66669 5" stroke="#EAEAEA" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M3.66669 11L9.66669 14L15.6667 11" stroke="#EAEAEA" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.66669 5L3.66669 8L9.66669 11L15.6667 8L9.66669 5" stroke="#EAEAEA" strokeWidth="1.125" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M3.66669 11L9.66669 14L15.6667 11" stroke="#EAEAEA" strokeWidth="1.125" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <p className='text-xs whitespace-nowrap mt-2'>Section</p>
                 </div>
