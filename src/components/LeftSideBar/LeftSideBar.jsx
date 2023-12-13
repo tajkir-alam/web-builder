@@ -11,13 +11,17 @@ const LeftSideBar = () => {
                     placeholder='Search...'
                     className='max-w-full bg-[#333333] rounded-md outline-none py-[4px] px-[10px]'
                 />
-                <button className='absolute right-2 top-2 active:scale-90 duration-200'>
+                <button className='absolute right-5 top-2 z-20 active:scale-90 duration-200'>
                     <HiMagnifyingGlass />
                 </button>
 
                 <hr className='my-[26px] border-[#797979]' />
 
                 <MyComponents />
+
+                <hr className='my-[26px] border-[#797979]' />
+
+
 
             </div>
         </div>
