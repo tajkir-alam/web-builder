@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { HiChevronDown } from 'react-icons/hi2';
 import ReactQuill from 'react-quill';
 import './TextEditor.css';
@@ -13,18 +13,17 @@ const RightSideBar = () => {
 
     const toolbarOptions = [
         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-        ['bold', 'italic', 'underline', 'strike'],
+        ['bold', 'italic', 'underline'],
         [{ 'color': [] }, { 'background': [] }],
 
         [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-        [{ 'indent': '-1' }, { 'indent': '+1' }],
-        [{ 'direction': 'rtl' }],
 
         [{ 'size': ['small', false, 'large', 'huge'] }],
 
         [{ 'font': [] }],
         [{ 'align': [] }],
-
+        ['image'],
+        ['link'],
         ['clean']
     ];
 

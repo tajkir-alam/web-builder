@@ -9,14 +9,3 @@
 .secondary-bg {
     @apply bg-[#1E1E1E];
 }
-
-::placeholder {
-    color: white;
-    opacity: 1;
-    /* Firefox */
-}
-
-::-ms-input-placeholder {
-    /* Edge 12 -18 */
-    color: white;
-}

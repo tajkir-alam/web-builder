@@ -693,6 +693,11 @@
     stroke-width: 2;
 }
 
+.ql-snow .ql-stroke:hover {
+    fill: white;
+    stroke: white;
+}
+
 .ql-snow .ql-stroke-miter {
     fill: none;
     stroke: #444;
