@@ -64,7 +64,7 @@ const RightSideBar = () => {
 
 
     return (
-        <div className='primary-bg h-screen py-[25px] px-[15px]'>
+        <div className='primary-bg h-screen py-[25px] px-[15px] overflow-hidden'>
             <div className='mb-4 flex items-center justify-between'>
                 <h5>Basic Components</h5>
                 <button onClick={() => setShowComponents(!showComponents)}>
@@ -78,7 +78,7 @@ const RightSideBar = () => {
                 editorState={editorState}
                 onEditorStateChange={handleEditorChange}
                 wrapperClassName="demo-wrapper h-[130px] text-black rounded-lg"
-                editorClassName="demo-editor bg-[#2F3031] text-white rounded-lg scrollbar-hidden no-scrollbar border border-[#575757]"
+                editorClassName="demo-editor bg-[#2F3031] text-white rounded-lg scrollbar-hidden no-scrollbar border border-[#575757] px-2"
                 toolbarClassName="demo-toolbar"
                 toolbar={toolbarOptions}
             />
