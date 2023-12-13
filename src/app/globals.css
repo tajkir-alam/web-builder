@@ -5,6 +5,25 @@
 .primary-bg {
     @apply bg-[#2B2B2B];
 }
+
 .secondary-bg {
     @apply bg-[#1E1E1E];
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.demo-wrapper .rdw-editor-toolbar {
+    background-color: #2F3031;
+    border-color: #575757;
+    border-radius: 4px;
 }
