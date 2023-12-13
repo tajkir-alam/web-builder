@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="grid grid-cols-12 text-white h-screen">
+      <main className="grid grid-cols-[2.5fr_7fr_2.5fr] text-white h-screen">
         <LeftSideBar />
         <MainBody />
         <RightSideBar />

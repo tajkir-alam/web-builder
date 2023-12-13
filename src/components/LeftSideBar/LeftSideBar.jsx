@@ -1,9 +1,10 @@
 import React from 'react';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
+import MyComponents from './MyComponents/MyComponents';
 
 const LeftSideBar = () => {
     return (
-        <div className='col-span-2 primary-bg h-screen py-[25px] px-[15px]'>
+        <div className='primary-bg h-screen py-[25px] px-[15px]'>
             <div className='relative'>
                 <input
                     type="text"
@@ -15,6 +16,8 @@ const LeftSideBar = () => {
                 </button>
 
                 <hr className='my-[26px] border-[#797979]' />
+
+                <MyComponents />
 
             </div>
         </div>
