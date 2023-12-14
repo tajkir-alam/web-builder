@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { HiChevronDown } from 'react-icons/hi2';
-import ReactQuill from 'react-quill';
-import './TextEditor.css';
 import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
+import dynamic from 'next/dynamic';
+import './TextEditor.css';
 
 
 const RightSideBar = ({ value, setValue }) => {
     const { showComponents, componentsHidden, showComponentMenu } = useToggleMenu();
+    const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }),[]);
 
     // toggle btn
     const [isToggled, setIsToggled] = useState(false);
