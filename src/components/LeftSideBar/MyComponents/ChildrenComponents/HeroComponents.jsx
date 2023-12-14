@@ -6,10 +6,7 @@ const HeroComponents = ({ handleFlip }) => {
     return (
         <>
         <h4 className='text-center mb-4'>Hero Banner</h4>
-            <div
-                onClick={handleFlip}
-                className="bg-[#3e3f41] hover:bg-[#4f5053] rounded-md grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer"
-            >
+            <div className="rounded-md grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer">
                 <div>
                     <Image
                         alt=''
