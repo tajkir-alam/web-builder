@@ -1,17 +1,69 @@
+import Image from 'next/image';
 import React from 'react';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { HiPhoto } from 'react-icons/hi2';
 
 const HeroComponents = ({ handleFlip }) => {
     return (
         <>
-            <div onClick={handleFlip} className="bg-[#3e3f41] hover:bg-[#4f5053] rounded flex flex-col items-center py-3 cursor-pointer">
-                <HiPhoto />
-                <p className='text-xs whitespace-nowrap mt-2'>Search bar</p>
-            </div>
-            <div className="bg-[#3e3f41] hover:bg-[#4f5053] rounded flex flex-col items-center py-3 cursor-pointer">
-                <HiPhoto />
-                <p className='text-xs whitespace-nowrap mt-2'>Container</p>
+        <h4 className='text-center mb-4'>Hero Banner</h4>
+            <div
+                onClick={handleFlip}
+                className="bg-[#3e3f41] hover:bg-[#4f5053] rounded-md grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer"
+            >
+                <div>
+                    <Image
+                        alt=''
+                        src="/ComponentsBannerImg/banner1.jpg"
+                        height={100}
+                        width={300}
+                        className='rounded-md hover:scale-105 duration-300'
+                    />
+                </div>
+                <div>
+                    <Image
+                        alt=''
+                        src="/ComponentsBannerImg/banner2.jpg"
+                        height={100}
+                        width={300}
+                        className='rounded-md hover:scale-105 duration-300'
+                    />
+                </div>
+                <div>
+                    <Image
+                        alt=''
+                        src="/ComponentsBannerImg/banner3.jpg"
+                        height={100}
+                        width={300}
+                        className='rounded-md hover:scale-105 duration-300'
+                    />
+                </div>
+                <div>
+                    <Image
+                        alt=''
+                        src="/ComponentsBannerImg/banner4.jpg"
+                        height={100}
+                        width={300}
+                        className='rounded-md hover:scale-105 duration-300'
+                    />
+                </div>
+                <div>
+                    <Image
+                        alt=''
+                        src="/ComponentsBannerImg/banner5.jpg"
+                        height={100}
+                        width={300}
+                        className='rounded-md hover:scale-105 duration-300'
+                    />
+                </div>
+                <div>
+                    <Image
+                        alt=''
+                        src="/ComponentsBannerImg/banner6.png"
+                        height={100}
+                        width={300}
+                        className='rounded-md hover:scale-105 duration-300'
+                    />
+                </div>
             </div>
 
             {/* this is for go back to front part again */}
