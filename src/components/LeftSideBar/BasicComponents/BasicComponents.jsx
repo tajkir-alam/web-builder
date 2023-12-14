@@ -1,19 +1,11 @@
 "use client";
+import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
 import React, { useState } from 'react';
 import { AiOutlineFontSize } from "react-icons/ai";
 import { HiChevronDown, HiOutlinePhoto } from 'react-icons/hi2';
 
 const BasicComponents = () => {
-    const [showComponents, setShowComponents] = useState(true);
-    const [componentsHidden, setComponentsHidden] = useState(false);
-
-    const showComponentMenu = () => {
-        setShowComponents(!showComponents);
-        setTimeout(() => {
-            setComponentsHidden(!componentsHidden);
-        }, 350);
-    }
-
+    const { showComponents, componentsHidden, showComponentMenu } = useToggleMenu();
 
     return (
         <section>

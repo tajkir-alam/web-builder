@@ -1,17 +1,10 @@
 "use client";
+import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
 import React, { useEffect, useState } from 'react';
 import { HiChevronDown, HiPhoto } from 'react-icons/hi2';
 
 const MyComponents = () => {
-    const [showComponents, setShowComponents] = useState(true);
-    const [componentsHidden, setComponentsHidden] = useState(false);
-
-    const showComponentMenu = () => {
-        setShowComponents(!showComponents);
-        setTimeout(() => {
-            setComponentsHidden(!componentsHidden);
-        }, 350);
-    }
+    const { showComponents, componentsHidden, showComponentMenu } = useToggleMenu();
 
     return (
         <section>
