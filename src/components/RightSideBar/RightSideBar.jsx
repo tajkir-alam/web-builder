@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from 'react';
 import { HiChevronDown } from 'react-icons/hi2';
 import ReactQuill from 'react-quill';
@@ -6,9 +5,8 @@ import './TextEditor.css';
 import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
 
 
-const RightSideBar = () => {
-    const {showComponents, componentsHidden, showComponentMenu} = useToggleMenu();
-    const [value, setValue] = useState('');
+const RightSideBar = ({ value, setValue }) => {
+    const { showComponents, componentsHidden, showComponentMenu } = useToggleMenu();
 
     // toggle btn
     const [isToggled, setIsToggled] = useState(false);
