@@ -54,9 +54,8 @@ const RightSideBar = () => {
                 </button>
             </div>
 
-            <section>
+            <section className={`${!showComponents && '-translate-y-16 opacity-0 invisible'} ${componentsHidden && 'hidden'} translate-y-0 duration-300`}>
                 <h6 className='text-[#918f8f] text-sm'>Text *</h6>
-
                 <ReactQuill
                     theme="snow"
                     value={value}
