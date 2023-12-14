@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { HiChevronDown } from 'react-icons/hi2';
 import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
 import dynamic from 'next/dynamic';
-import 'react-quill/dist/TextEditor.css';
+import './TextEditor.css';
 
 
 const RightSideBar = ({ value, setValue }) => {
