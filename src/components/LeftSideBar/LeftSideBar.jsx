@@ -1,9 +1,16 @@
-import React from 'react';
-import { HiMagnifyingGlass } from 'react-icons/hi2';
+import React, { useState } from 'react';
+import { HiMagnifyingGlass, HiPhoto } from 'react-icons/hi2';
 import MyComponents from './MyComponents/MyComponents';
 import BasicComponents from './BasicComponents/BasicComponents';
+import ReactCardFlip from 'react-card-flip';
 
 const LeftSideBar = () => {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        setIsFlipped((prevIsFlipped) => !prevIsFlipped);
+    };
 
     return (
         <div className='primary-bg h-screen py-[25px] px-[15px]'>
@@ -18,13 +25,26 @@ const LeftSideBar = () => {
                 </button>
 
                 <hr className='my-[26px] border-[#797979]' />
+                <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+                    <div>
+                        <MyComponents handleClick={handleClick} />
 
-                <MyComponents />
+                        <hr className='my-[26px] border-[#797979]' />
 
-                <hr className='my-[26px] border-[#797979]' />
+                        <BasicComponents />
+                    </div>
 
-                <BasicComponents />
-
+                    <div>
+                        <div onClick={handleClick} className="bg-[#3e3f41] hover:bg-[#4f5053] rounded flex flex-col items-center py-3 cursor-pointer">
+                            <HiPhoto />
+                            <p className='text-xs whitespace-nowrap mt-2'>Search bar</p>
+                        </div>
+                        <div className="bg-[#3e3f41] hover:bg-[#4f5053] rounded flex flex-col items-center py-3 cursor-pointer">
+                            <HiPhoto />
+                            <p className='text-xs whitespace-nowrap mt-2'>Container</p>
+                        </div>
+                    </div>
+                </ReactCardFlip>
             </div>
         </div>
     );
