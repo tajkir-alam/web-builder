@@ -22,7 +22,6 @@ const MainBody = ({ value }) => {
                         Add Block
                     </button>
                 </div>
-
             </div>
         </section>
     );

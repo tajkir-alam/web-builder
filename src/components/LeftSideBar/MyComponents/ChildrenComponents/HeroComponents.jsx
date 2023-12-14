@@ -1,11 +1,11 @@
-import Image from 'next/image';
 import React from 'react';
+import Image from 'next/image';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const HeroComponents = ({ handleFlip }) => {
     return (
         <>
-        <h4 className='text-center mb-4'>Hero Banner</h4>
+            <h4 className='text-center mb-4'>Hero Banner</h4>
             <div className="rounded-md grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer">
                 <div>
                     <Image
@@ -14,6 +14,7 @@ const HeroComponents = ({ handleFlip }) => {
                         height={100}
                         width={300}
                         className='rounded-md hover:scale-105 duration-300'
+                        draggable
                     />
                 </div>
                 <div>

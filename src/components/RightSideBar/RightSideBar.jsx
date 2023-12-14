@@ -4,12 +4,17 @@ import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
 import dynamic from 'next/dynamic';
 import './TextEditor.css';
 
+import Quill from 'quill';
+import ImageResize from 'quill-image-resize-module-react';
+Quill.register('modules/imageResize', ImageResize);
+
+
 
 const RightSideBar = ({ value, setValue }) => {
     const { showComponents, componentsHidden, showComponentMenu } = useToggleMenu();
-    
+
     // ReactQuill preventing from server-side-rendering 
-    const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }),[]);
+    const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }), []);
 
     // toggle btn
     const [isToggled, setIsToggled] = useState(false);
@@ -32,6 +37,10 @@ const RightSideBar = ({ value, setValue }) => {
 
     const modules = {
         toolbar: toolbarOptions,
+        imageResize: {
+            parchment: Quill.import('parchment'),
+            modules: ['Resize', 'DisplaySize']
+        }
     };
 
     return (
