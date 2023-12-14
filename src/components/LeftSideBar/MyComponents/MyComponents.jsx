@@ -14,7 +14,7 @@ const MyComponents = () => {
     }
 
     return (
-        <>
+        <section>
             <div className='mb-4 flex items-center justify-between'>
                 <h5>My Components</h5>
                 <button onClick={showComponentMenu}>
@@ -39,7 +39,7 @@ const MyComponents = () => {
                     <p className='text-xs whitespace-nowrap mt-2'>Container</p>
                 </div>
             </div>
-        </>
+        </section>
     );
 };
 

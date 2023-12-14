@@ -7,7 +7,16 @@ import './TextEditor.css';
 
 const RightSideBar = () => {
     const [showComponents, setShowComponents] = useState(true);
+    const [componentsHidden, setComponentsHidden] = useState(false);
     const [value, setValue] = useState('');
+
+    const showComponentMenu = () => {
+        setShowComponents(!showComponents);
+        setTimeout(() => {
+            setComponentsHidden(!componentsHidden);
+        }, 350);
+    }
+
 
     const [isToggled, setIsToggled] = useState(false);
 
@@ -40,19 +49,22 @@ const RightSideBar = () => {
         <div className='primary-bg h-screen py-[25px] px-[15px] overflow-hidden'>
             <div className='mb-4 flex items-center justify-between'>
                 <h5>Basic Components</h5>
-                <button onClick={() => setShowComponents(!showComponents)}>
+                <button onClick={showComponentMenu}>
                     <HiChevronDown className={`${showComponents ? 'rotate-0' : 'rotate-180'} duration-300`} />
                 </button>
             </div>
-            <h6 className='text-[#918f8f] text-sm'>Text *</h6>
 
-            <ReactQuill
-                theme="snow"
-                value={value}
-                onChange={setValue}
-                modules={modules}
-                className='mt-4 min-h-[250px] h-auto bg-[#2F3031] border border-[#575757] rounded'
-            />
+            <section>
+                <h6 className='text-[#918f8f] text-sm'>Text *</h6>
+
+                <ReactQuill
+                    theme="snow"
+                    value={value}
+                    onChange={setValue}
+                    modules={modules}
+                    className='mt-4 min-h-[250px] h-auto bg-[#2F3031] border border-[#575757] rounded'
+                />
+            </section>
 
             <div className='mt-[26px] space-y-4'>
                 <div className='flex items-center justify-between'>

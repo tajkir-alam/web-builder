@@ -7,9 +7,9 @@ const Header = () => {
             <h3>Web Builder Editor</h3>
             <div className='flex items-center space-x-6'>
                 <div className='flex items-center space-x-3 text-[#c5c5c5] text-lg'>
-                    <button><HiArrowUturnLeft /></button>
-                    <button><HiArrowUturnRight /></button>
-                    <button><HiOutlineEye /></button>
+                    <button className='hover:text-[#ecebeb]'><HiArrowUturnLeft /></button>
+                    <button className='hover:text-[#ecebeb]'><HiArrowUturnRight /></button>
+                    <button className='hover:text-[#ecebeb]'><HiOutlineEye /></button>
                 </div>
                 <button className='bg-[#F1614A] py-[10px] px-[20px] text-[13px] hover:bg-[#F1994D] duration-100'>Publish</button>
             </div>
