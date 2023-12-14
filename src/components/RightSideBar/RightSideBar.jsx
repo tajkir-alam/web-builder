@@ -54,17 +54,17 @@ const RightSideBar = () => {
                 className='mt-4 min-h-[250px] h-auto bg-[#2F3031] border border-[#575757] rounded'
             />
 
-            <div>
-                <div className='flex '>
+            <div className='mt-[26px] space-y-4'>
+                <div className='flex items-center justify-between'>
                     <p>Inline Text Editing</p>
                     <div className="flex items-center justify-center">
                         <button
                             onClick={handleToggle}
-                            className={`relative w-12 h-6 rounded-full focus:outline-none transition-transform duration-300 transform ${isToggled ? 'bg-green-500' : 'bg-gray-300'
+                            className={`relative w-10 h-5 rounded-full focus:outline-none transition-transform duration-300 transform ${isToggled ? 'bg-green-500' : 'bg-gray-300'
                                 }`}
                         >
                             <div
-                                className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow-md duration-300 ${isToggled ? 'translate-x-[calc(100%+12px)]' : 'translate-x-1'
+                                className={`absolute top-1 w-3 h-3 bg-white rounded-full shadow-md duration-300 ${isToggled ? 'translate-x-[calc(100%+12px)]' : 'translate-x-1'
                                     }`}
                             />
                         </button>
