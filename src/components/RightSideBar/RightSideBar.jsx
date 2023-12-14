@@ -1,39 +1,27 @@
 "use client";
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { HiChevronDown } from 'react-icons/hi2';
 import ReactQuill from 'react-quill';
 import './TextEditor.css';
+import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
 
 
 const RightSideBar = () => {
-    const [showComponents, setShowComponents] = useState(true);
-    const [componentsHidden, setComponentsHidden] = useState(false);
+    const {showComponents, componentsHidden, showComponentMenu} = useToggleMenu();
     const [value, setValue] = useState('');
 
-    const showComponentMenu = () => {
-        setShowComponents(!showComponents);
-        setTimeout(() => {
-            setComponentsHidden(!componentsHidden);
-        }, 350);
-    }
-
-
+    // toggle btn
     const [isToggled, setIsToggled] = useState(false);
-
     const handleToggle = () => {
         setIsToggled(!isToggled);
     };
-
 
     const toolbarOptions = [
         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
         ['bold', 'italic', 'underline'],
         [{ 'color': [] }, { 'background': [] }],
-
         [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-
         [{ 'size': ['small', false, 'large', 'huge'] }],
-
         [{ 'font': [] }],
         [{ 'align': [] }],
         ['image'],
