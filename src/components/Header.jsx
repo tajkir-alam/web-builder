@@ -4,7 +4,7 @@ import { HiArrowUturnLeft, HiArrowUturnRight, HiOutlineEye } from "react-icons/h
 const Header = () => {
     return (
         <header className='primary-bg text-white ps-[26px] font-semibold flex justify-between items-center border-b border-b-[#575757]'>
-            <h3>Web Builder Editor</h3>
+            <h3>Titans Web Builder</h3>
             <div className='flex items-center space-x-6'>
                 <div className='flex items-center space-x-3 text-[#c5c5c5] text-lg'>
                     <button className='hover:text-[#ecebeb]'><HiArrowUturnLeft /></button>
