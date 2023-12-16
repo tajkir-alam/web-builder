@@ -1,77 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from "next/legacy/image";
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const HeroComponents = ({ handleFlip }) => {
+    const [clickedImagePath, setClickedImagePath] = useState(null);
+
+    const imagePaths = [
+        "/ComponentsBannerImg/banner1.png",
+        "/ComponentsBannerImg/banner2.jpg",
+        "/ComponentsBannerImg/banner3.jpg",
+        "/ComponentsBannerImg/banner4.jpg",
+        "/ComponentsBannerImg/banner5.jpg",
+        "/ComponentsBannerImg/banner6.png",
+        "/ComponentsBannerImg/banner7.jpg",
+    ];
+
+    const handleImageClick = (path) => {
+        setClickedImagePath(path);
+        console.log("Clicked Image Path:", path);
+    };
+
     return (
         <>
             <h4 className='text-center mb-4'>Hero Banner</h4>
             <div className="grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer">
-                <div>
-                    <Image
-                        alt=''
-                        src="/ComponentsBannerImg/banner1.png"
-                        height={250}
-                        width={400}
-                        className='rounded hover:scale-105 duration-300'
-                        draggable
-                    />
-                </div>
-                <div>
-                    <Image
-                        alt=''
-                        src="/ComponentsBannerImg/banner2.jpg"
-                        height={250}
-                        width={400}
-                        className='rounded hover:scale-105 duration-300'
-                    />
-                </div>
-                <div>
-                    <Image
-                        alt=''
-                        src="/ComponentsBannerImg/banner3.jpg"
-                        height={250}
-                        width={400}
-                        className='rounded hover:scale-105 duration-300'
-                    />
-                </div>
-                <div>
-                    <Image
-                        alt=''
-                        src="/ComponentsBannerImg/banner4.jpg"
-                        height={250}
-                        width={400}
-                        className='rounded hover:scale-105 duration-300'
-                    />
-                </div>
-                <div>
-                    <Image
-                        alt=''
-                        src="/ComponentsBannerImg/banner5.jpg"
-                        height={250}
-                        width={400}
-                        className='rounded hover:scale-105 duration-300'
-                    />
-                </div>
-                <div>
-                    <Image
-                        alt=''
-                        src="/ComponentsBannerImg/banner6.png"
-                        height={250}
-                        width={400}
-                        className='rounded hover:scale-105 duration-300'
-                    />
-                </div>
-                <div>
-                    <Image
-                        alt=''
-                        src="/ComponentsBannerImg/banner7.jpg"
-                        height={250}
-                        width={400}
-                        className='rounded hover:scale-105 duration-300'
-                        draggable
-                    />
-                </div>
+                {imagePaths.map((path, index) => (
+                    <div key={index} onClick={() => handleImageClick(path)}>
+                        <Image
+                            alt=''
+                            src={path}
+                            height={250}
+                            width={400}
+                            className='rounded hover:scale-105 duration-300'
+                        />
+                    </div>
+                ))}
             </div>
 
             {/* this is for go back to front part again */}

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { HiOutlineTrash } from 'react-icons/hi2';
 import { useDispatch, useSelector } from 'react-redux';
 import { decreaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
+import { updatedText } from '@/redux/features/textEditor/textEditorSlice';
 
 
 const SectionContainer = ({ _id }) => {
@@ -18,7 +19,7 @@ const SectionContainer = ({ _id }) => {
 
     const stripHtmlTags = (htmlString) => {
         const removeTags = new DOMParser().parseFromString(htmlString, 'text/html');
-        return removeTags.body.textContent || "gift guide";
+        return removeTags.body.textContent || "Here’s to Joy";
     }
 
     const dragConstraints = {
@@ -37,22 +38,24 @@ const SectionContainer = ({ _id }) => {
             />
 
             <div className='absolute text-center inset-y-1/4 w-2/5 left-[30%]'>
+                <motion.p
+                    drag
+                    dragConstraints={dragConstraints}
+                    // value={stripHtmlTags(textValue)}
+                    // onChange={(e) => dispatch(updatedText(e.target.value))}
+                    className='content-border bg-transparent capitalize text-[13.412px] text-[#69764A] font-semibold focus:outline-none py-1 px-2'
+                >
+                    gift guide
+                </motion.p>
+
                 <motion.input
                     drag
                     dragConstraints={dragConstraints}
-                    defaultValue={stripHtmlTags(textValue)}
-                    disabled
-                    className='content-border capitalize text-[13.412px] text-[#69764A] font-semibold focus:outline-none py-1 px-2'
+                    value={stripHtmlTags(textValue)}
+                    onChange={(e) => dispatch(updatedText(e.target.value))}
+                    className='content-border bg-transparent text-[36.224px] text-[#536136] w-full font-bold my-[2px] focus:outline-none py-1 px-2'
                 />
-                {/* gift guide
-                </motion.input> */}
-                <motion.h3
-                    drag
-                    dragConstraints={dragConstraints}
-                    className='content-border text-[36.224px] text-[#536136] font-bold my-[2px]'
-                >
-                    Here’s to Joy
-                </motion.h3>
+
                 <motion.p
                     drag
                     dragConstraints={dragConstraints}
@@ -60,6 +63,7 @@ const SectionContainer = ({ _id }) => {
                 >
                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
                 </motion.p>
+                
                 <motion.div
                     drag
                     dragConstraints={dragConstraints}
