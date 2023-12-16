@@ -9,9 +9,11 @@ import './TextEditor.css';
 // # NOTE: This Quill package suppose to import by using dynamic from next. In here document is not defined.
 // # TODO: Have to solve this issue, if I use dynamic to import Quill then it's providing another error: Quill.register is not a function.
 // #--- Image resize are working on local but not in build.
-import Quill from 'quill';
-import ImageResize from 'quill-image-resize-module-react';
-Quill.register('modules/imageResize', ImageResize);
+// ************* Code Start *************
+// import Quill from 'quill';
+// import ImageResize from 'quill-image-resize-module-react';
+// Quill.register('modules/imageResize', ImageResize);
+// ************* Code End *************
 
 
 
@@ -42,10 +44,12 @@ const RightSideBar = ({ value, setValue }) => {
 
     const modules = {
         toolbar: toolbarOptions,
-        imageResize: {
-            parchment: Quill.import('parchment'),
-            modules: ['Resize', 'DisplaySize']
-        }
+       
+        // ************* for image resize *************
+        // imageResize: {
+        //     parchment: Quill.import('parchment'),
+        //     modules: ['Resize', 'DisplaySize']
+        // }
     };
 
     return (
