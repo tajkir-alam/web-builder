@@ -2,9 +2,15 @@ import React from 'react';
 import Image from "next/legacy/image";
 import { motion } from "framer-motion"
 import { HiOutlineTrash } from 'react-icons/hi2';
+import { useDispatch, useSelector } from 'react-redux';
+import { decreaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
 
 
-const SectionContainer = ({ dispatch, decreaseCount, _id, value }) => {
+const SectionContainer = ({ _id }) => {
+    const dispatch = useDispatch();
+    const { textValue } = useSelector((state) => state.textEditor);
+
+
     const dragConstraints = {
         top: -100,
         left: -100,
@@ -24,7 +30,7 @@ const SectionContainer = ({ dispatch, decreaseCount, _id, value }) => {
                 <motion.input
                     drag
                     dragConstraints={dragConstraints}
-                    defaultValue={value ? value : 'gift guide'}
+                    defaultValue={textValue ? textValue : 'gift guide'}
                     disabled
                     className='content-border capitalize text-[13.412px] text-[#69764A] font-semibold focus:outline-none py-1 px-2'
                 />

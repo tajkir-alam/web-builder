@@ -24,8 +24,6 @@ const RightSideBar = () => {
     const { textValue } = useSelector((state) => state.textEditor);
     const { showComponents, componentsHidden, showComponentMenu } = useToggleMenu();
 
-    console.log(textValue);
-
     // ReactQuill preventing from server-side-rendering 
     const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }), []);
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { decreaseCount, increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
+import { increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
 import { AiOutlinePlus } from 'react-icons/ai';
 import SectionContainer from './SectionContainer';
 
 const MainBody = () => {
-    const value = 'hello'
-    const sections = useSelector((state) => state.sectionCount.sections);
     const dispatch = useDispatch();
+    const sections = useSelector((state) => state.sectionCount.sections);
+    const { textValue } = useSelector((state) => state.textEditor);
 
     const sanitizedHTML = (html) => {
         return { __html: html };
@@ -17,17 +17,14 @@ const MainBody = () => {
         <section className="secondary-bg py-[50px] px-[80px]">
             <h4 className='bg-[#2B2B2B] rounded-md text-sm mb-8 py-3 ps-4'>Desktop</h4>
 
-            <p dangerouslySetInnerHTML={sanitizedHTML(value)}></p>
+            <p dangerouslySetInnerHTML={sanitizedHTML(textValue)} className='my-8'></p>
 
             {/* Sections */}
             {
                 sections.map((section) =>
                     <div key={section._id} className='my-8 relative w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300'>
                         <SectionContainer
-                            dispatch={dispatch}
-                            decreaseCount={decreaseCount}
                             _id={section._id}
-                            value={value}
                         />
                     </div>
                 )
