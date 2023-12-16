@@ -3,6 +3,8 @@ import { HiChevronDown } from 'react-icons/hi2';
 import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
 import dynamic from 'next/dynamic';
 import './TextEditor.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { updatedText } from '@/redux/features/textEditor/textEditorSlice';
 
 
 // --------------> BACK_DOOR <--------------
@@ -17,8 +19,12 @@ import './TextEditor.css';
 
 
 
-const RightSideBar = ({ value, setValue }) => {
+const RightSideBar = () => {
+    const dispatch = useDispatch();
+    const { textValue } = useSelector((state) => state.textEditor);
     const { showComponents, componentsHidden, showComponentMenu } = useToggleMenu();
+
+    console.log(textValue);
 
     // ReactQuill preventing from server-side-rendering 
     const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }), []);
@@ -44,7 +50,7 @@ const RightSideBar = ({ value, setValue }) => {
 
     const modules = {
         toolbar: toolbarOptions,
-       
+
         // ************* for image resize *************
         // imageResize: {
         //     parchment: Quill.import('parchment'),
@@ -65,8 +71,8 @@ const RightSideBar = ({ value, setValue }) => {
                 <h6 className='text-[#918f8f] text-sm'>Text *</h6>
                 <ReactQuill
                     theme="snow"
-                    value={value}
-                    onChange={setValue}
+                    value={textValue}
+                    onChange={(e) => dispatch(updatedText(e))}
                     modules={modules}
                     className='mt-4 min-h-[250px] h-auto bg-[#2F3031] border border-[#575757] rounded'
                 />

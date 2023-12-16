@@ -4,14 +4,15 @@ import { decreaseCount, increaseCount } from '@/redux/features/sectionCount/sect
 import { AiOutlinePlus } from 'react-icons/ai';
 import SectionContainer from './SectionContainer';
 
-const MainBody = ({ value }) => {
+const MainBody = () => {
+    const value = 'hello'
     const sections = useSelector((state) => state.sectionCount.sections);
     const dispatch = useDispatch();
 
     const sanitizedHTML = (html) => {
         return { __html: html };
     };
-    console.log(value);
+    
     return (
         <section className="secondary-bg py-[50px] px-[80px]">
             <h4 className='bg-[#2B2B2B] rounded-md text-sm mb-8 py-3 ps-4'>Desktop</h4>
