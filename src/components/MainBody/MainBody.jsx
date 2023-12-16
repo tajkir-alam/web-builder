@@ -26,7 +26,7 @@ const MainBody = ({ value }) => {
                             src='/ComponentsBannerImg/banner1.png'
                         />
 
-                        <div className='absolute text-center inset-y-1/3 w-2/5 left-[30%]'>
+                        <div className='absolute text-center inset-y-1/4 w-2/5 left-[30%]'>
                             <h6 className='capitalize text-[13.412px] text-[#69764A] font-semibold'>gift guide</h6>
                             <h3 className='text-[36.224px] text-[#536136] font-bold'>Here’s to Joy</h3>
                             <p className='text-[8.567px] text-[#7A8365] mb-[16px]'>
