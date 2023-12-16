@@ -10,6 +10,16 @@ const SectionContainer = ({ _id }) => {
     const dispatch = useDispatch();
     const { textValue } = useSelector((state) => state.textEditor);
 
+    // Utility function to strip HTML tags
+    const stripHtmlTag = (htmlString) => {
+        const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+        return doc.body.textContent || "";
+    };
+
+    const stripHtmlTags = (htmlString) => {
+        const removeTags = new DOMParser().parseFromString(htmlString, 'text/html');
+        return removeTags.body.textContent || "gift guide";
+    }
 
     const dragConstraints = {
         top: -100,
@@ -30,7 +40,7 @@ const SectionContainer = ({ _id }) => {
                 <motion.input
                     drag
                     dragConstraints={dragConstraints}
-                    defaultValue={textValue ? textValue : 'gift guide'}
+                    defaultValue={stripHtmlTags(textValue)}
                     disabled
                     className='content-border capitalize text-[13.412px] text-[#69764A] font-semibold focus:outline-none py-1 px-2'
                 />
