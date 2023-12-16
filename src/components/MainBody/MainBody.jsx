@@ -11,7 +11,7 @@ const MainBody = ({ value }) => {
     const sanitizedHTML = (html) => {
         return { __html: html };
     };
-
+    console.log(value);
     return (
         <section className="secondary-bg py-[50px] px-[80px]">
             <h4 className='bg-[#2B2B2B] rounded-md text-sm mb-8 py-3 ps-4'>Desktop</h4>
@@ -26,6 +26,7 @@ const MainBody = ({ value }) => {
                             dispatch={dispatch}
                             decreaseCount={decreaseCount}
                             _id={section._id}
+                            value={value}
                         />
                     </div>
                 )

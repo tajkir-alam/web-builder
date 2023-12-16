@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { HiOutlineTrash } from 'react-icons/hi2';
 
 
-const SectionContainer = ({ dispatch, decreaseCount, _id }) => {
+const SectionContainer = ({ dispatch, decreaseCount, _id, value }) => {
     const dragConstraints = {
         top: -100,
         left: -100,
@@ -21,13 +21,15 @@ const SectionContainer = ({ dispatch, decreaseCount, _id }) => {
             />
 
             <div className='absolute text-center inset-y-1/4 w-2/5 left-[30%]'>
-                <motion.h6
+                <motion.input
                     drag
                     dragConstraints={dragConstraints}
-                    className='content-border capitalize text-[13.412px] text-[#69764A] font-semibold'
-                >
-                    gift guide
-                </motion.h6>
+                    defaultValue={value ? value : 'gift guide'}
+                    disabled
+                    className='content-border capitalize text-[13.412px] text-[#69764A] font-semibold focus:outline-none py-1 px-2'
+                />
+                {/* gift guide
+                </motion.input> */}
                 <motion.h3
                     drag
                     dragConstraints={dragConstraints}

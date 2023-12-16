@@ -30,7 +30,7 @@ export const sectionCountSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
+
 export const { increaseCount, decreaseCount } = sectionCountSlice.actions;
 
 export default sectionCountSlice.reducer;
