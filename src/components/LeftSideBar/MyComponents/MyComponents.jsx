@@ -1,6 +1,6 @@
 "use client";
 import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { HiChevronDown, HiPhoto } from 'react-icons/hi2';
 
 const MyComponents = ({ handleFlip }) => {

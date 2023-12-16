@@ -10,7 +10,7 @@ const HeroComponents = ({ handleFlip }) => {
                 <div>
                     <Image
                         alt=''
-                        src="/ComponentsBannerImg/banner1.jpg"
+                        src="/ComponentsBannerImg/banner1.png"
                         height={100}
                         width={300}
                         className='rounded-md hover:scale-105 duration-300'
@@ -60,6 +60,16 @@ const HeroComponents = ({ handleFlip }) => {
                         height={100}
                         width={300}
                         className='rounded-md hover:scale-105 duration-300'
+                    />
+                </div>
+                <div>
+                    <Image
+                        alt=''
+                        src="/ComponentsBannerImg/banner1.jpg"
+                        height={100}
+                        width={300}
+                        className='rounded-md hover:scale-105 duration-300'
+                        draggable
                     />
                 </div>
             </div>
