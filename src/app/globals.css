@@ -10,3 +10,10 @@
     @apply bg-[#1E1E1E];
 }
 
+.content-border {
+    @apply border border-transparent rounded-sm duration-500 py-[2px] cursor-move; 
+}
+
+.content-border:hover {
+    @apply border-gray-400;
+}
