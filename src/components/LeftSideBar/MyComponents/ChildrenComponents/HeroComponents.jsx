@@ -19,7 +19,6 @@ const HeroComponents = ({ handleFlip }) => {
 
     const handleImageClick = (path) => {
         dispatch((updateBannerImgSrc(path)));
-        console.log(path);
     };
 
     return (

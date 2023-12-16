@@ -10,6 +10,7 @@ import { updatedText } from '@/redux/features/textEditor/textEditorSlice';
 const SectionContainer = ({ _id }) => {
     const dispatch = useDispatch();
     const { textValue } = useSelector((state) => state.textEditor);
+    const { bannerImgSrc } = useSelector((state) => state.heroBannerImg);
 
     // Utility function to strip HTML tags
     const stripHtmlTag = (htmlString) => {
@@ -34,7 +35,7 @@ const SectionContainer = ({ _id }) => {
             <Image
                 alt='Hero'
                 layout='fill'
-                src='/ComponentsBannerImg/banner1.png'
+                src={bannerImgSrc}
             />
 
             <div className='absolute text-center inset-y-1/4 w-2/5 left-[30%]'>
@@ -63,7 +64,7 @@ const SectionContainer = ({ _id }) => {
                 >
                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
                 </motion.p>
-                
+
                 <motion.div
                     drag
                     dragConstraints={dragConstraints}
