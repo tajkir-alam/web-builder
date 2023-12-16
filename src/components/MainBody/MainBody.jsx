@@ -1,11 +1,11 @@
-import { increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
-import Image from 'next/image';
 import React from 'react';
-import { AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlineDelete, AiOutlinePlus } from 'react-icons/ai';
+import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
+import { decreaseCount, increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
 
 const MainBody = ({ value }) => {
-    const sectionCount = useSelector((state) => state.sectionCount.value);
+    const sections = useSelector((state) => state.sectionCount.sections);
     const dispatch = useDispatch();
 
     const sanitizedHTML = (html) => {
@@ -18,8 +18,8 @@ const MainBody = ({ value }) => {
 
             {/* Sections */}
             {
-                [...Array(sectionCount)].map((_, index) =>
-                    <div key={index} className='my-8 relative w-full h-96'>
+                sections.map((section) =>
+                    <div key={section._id} className='my-8 relative w-full h-96'>
                         <Image
                             alt='Hero'
                             layout='fill'
@@ -34,6 +34,9 @@ const MainBody = ({ value }) => {
                             </p>
                             <button className='bg-[#536136] hover:bg-[#627241] py-[6px] text-sm px-[14px] rounded capitalize duration-300 active:scale-95'>
                                 Shop Gifts
+                            </button>
+                            <button onClick={() => dispatch(decreaseCount(section._id))}>
+                                <AiOutlineDelete className='text-black' />
                             </button>
                         </div>
                     </div>

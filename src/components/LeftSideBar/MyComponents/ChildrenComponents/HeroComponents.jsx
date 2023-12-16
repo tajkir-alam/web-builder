@@ -65,7 +65,7 @@ const HeroComponents = ({ handleFlip }) => {
                 <div>
                     <Image
                         alt=''
-                        src="/ComponentsBannerImg/banner1.jpg"
+                        src="/ComponentsBannerImg/banner7.jpg"
                         height={100}
                         width={300}
                         className='rounded-md hover:scale-105 duration-300'
