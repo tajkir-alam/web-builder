@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import './TextEditor.css';
 
 import Quill from 'quill';
+window.Quill = Quill;
 import ImageResize from 'quill-image-resize-module-react';
 Quill.register('modules/imageResize', ImageResize);
 
