@@ -6,13 +6,13 @@ import SectionContainer from './SectionContainer';
 
 const MainBody = () => {
     const dispatch = useDispatch();
-    const sections = useSelector((state) => state.sectionCount.sections);
+    const { sections } = useSelector((state) => state.sectionCount);
     const { textValue } = useSelector((state) => state.textEditor);
 
     const sanitizedHTML = (html) => {
         return { __html: html };
     };
-    
+
     return (
         <section className="secondary-bg py-[50px] px-[80px]">
             <h4 className='bg-[#2B2B2B] rounded-md text-sm mb-8 py-3 ps-4'>Desktop</h4>

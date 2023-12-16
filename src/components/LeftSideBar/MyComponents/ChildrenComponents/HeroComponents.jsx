@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from "next/legacy/image";
 import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { useDispatch } from 'react-redux';
+import { updateBannerImgSrc } from '@/redux/features/heroBannerImg/heroBannerImgSlice';
 
 const HeroComponents = ({ handleFlip }) => {
-    const [clickedImagePath, setClickedImagePath] = useState(null);
+    const dispatch = useDispatch();
 
     const imagePaths = [
         "/ComponentsBannerImg/banner1.png",
@@ -16,8 +18,8 @@ const HeroComponents = ({ handleFlip }) => {
     ];
 
     const handleImageClick = (path) => {
-        setClickedImagePath(path);
-        console.log("Clicked Image Path:", path);
+        dispatch((updateBannerImgSrc(path)));
+        console.log(path);
     };
 
     return (
