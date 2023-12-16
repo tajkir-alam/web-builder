@@ -4,9 +4,12 @@ import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
 import dynamic from 'next/dynamic';
 import './TextEditor.css';
 
-// import Quill from 'quill';
-import { Quill } from 'react-quill';
-window.Quill = Quill;
+
+// --------------> BACK_DOOR <--------------
+// # NOTE: This Quill package suppose to import by using dynamic from next. In here document is not defined.
+// # TODO: Have to solve this issue, if I use dynamic to import Quill then it's providing another error: Quill.register is not a function.
+// #--- Image resize are working on local but not in build.
+import Quill from 'quill';
 import ImageResize from 'quill-image-resize-module-react';
 Quill.register('modules/imageResize', ImageResize);
 
