@@ -1,8 +1,9 @@
 import React from 'react';
-import { AiOutlineDelete, AiOutlinePlus } from 'react-icons/ai';
 import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { decreaseCount, increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
+import { AiOutlinePlus } from 'react-icons/ai';
+import { HiOutlineTrash } from 'react-icons/hi2';
 
 const MainBody = ({ value }) => {
     const sections = useSelector((state) => state.sectionCount.sections);
@@ -19,7 +20,7 @@ const MainBody = ({ value }) => {
             {/* Sections */}
             {
                 sections.map((section) =>
-                    <div key={section._id} className='my-8 relative w-full h-96'>
+                    <div key={section._id} className='my-8 relative w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300'>
                         <Image
                             alt='Hero'
                             layout='fill'
@@ -35,10 +36,14 @@ const MainBody = ({ value }) => {
                             <button className='bg-[#536136] hover:bg-[#627241] py-[6px] text-sm px-[14px] rounded capitalize duration-300 active:scale-95'>
                                 Shop Gifts
                             </button>
-                            <button onClick={() => dispatch(decreaseCount(section._id))}>
-                                <AiOutlineDelete className='text-black' />
-                            </button>
                         </div>
+
+                        {/* Section remove button */}
+                        <button
+                            onClick={() => dispatch(decreaseCount(section._id))}
+                            className='absolute -top-4 right-4 text-xl p-2 bg-[#F1614A] rounded-full hover:bg-[#719df0] opacity-0 group-hover:opacity-100 duration-300'>
+                            <HiOutlineTrash />
+                        </button>
                     </div>
                 )
             }
@@ -48,7 +53,7 @@ const MainBody = ({ value }) => {
             <div>
                 <p dangerouslySetInnerHTML={sanitizedHTML(value)}></p>
                 <div className='relative border border-[#5D96FF] h-36 w-full rounded-sm'>
-                    <button onClick={() => dispatch(increaseCount())} className='absolute -top-4 right-4 p-2 bg-[#5D96FF] rounded-full hover:bg-[#719df0] duration-200'>
+                    <button onClick={() => dispatch(increaseCount())} className='absolute -top-4 right-4 p-2 bg-[#5D96FF] rounded-full hover:bg-[#719df0] duration-300'>
                         <AiOutlinePlus />
                     </button>
 
