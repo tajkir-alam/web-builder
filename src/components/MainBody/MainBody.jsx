@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useDispatch, useSelector } from 'react-redux';
 import { decreaseCount, increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
 import { AiOutlinePlus } from 'react-icons/ai';

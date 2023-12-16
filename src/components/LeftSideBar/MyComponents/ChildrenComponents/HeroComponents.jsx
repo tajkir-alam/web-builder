@@ -1,19 +1,19 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const HeroComponents = ({ handleFlip }) => {
     return (
         <>
             <h4 className='text-center mb-4'>Hero Banner</h4>
-            <div className="rounded-md grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer">
+            <div className="grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer">
                 <div>
                     <Image
                         alt=''
                         src="/ComponentsBannerImg/banner1.png"
-                        height={100}
-                        width={300}
-                        className='rounded-md hover:scale-105 duration-300'
+                        height={250}
+                        width={400}
+                        className='rounded hover:scale-105 duration-300'
                         draggable
                     />
                 </div>
@@ -21,54 +21,54 @@ const HeroComponents = ({ handleFlip }) => {
                     <Image
                         alt=''
                         src="/ComponentsBannerImg/banner2.jpg"
-                        height={100}
-                        width={300}
-                        className='rounded-md hover:scale-105 duration-300'
+                        height={250}
+                        width={400}
+                        className='rounded hover:scale-105 duration-300'
                     />
                 </div>
                 <div>
                     <Image
                         alt=''
                         src="/ComponentsBannerImg/banner3.jpg"
-                        height={100}
-                        width={300}
-                        className='rounded-md hover:scale-105 duration-300'
+                        height={250}
+                        width={400}
+                        className='rounded hover:scale-105 duration-300'
                     />
                 </div>
                 <div>
                     <Image
                         alt=''
                         src="/ComponentsBannerImg/banner4.jpg"
-                        height={100}
-                        width={300}
-                        className='rounded-md hover:scale-105 duration-300'
+                        height={250}
+                        width={400}
+                        className='rounded hover:scale-105 duration-300'
                     />
                 </div>
                 <div>
                     <Image
                         alt=''
                         src="/ComponentsBannerImg/banner5.jpg"
-                        height={100}
-                        width={300}
-                        className='rounded-md hover:scale-105 duration-300'
+                        height={250}
+                        width={400}
+                        className='rounded hover:scale-105 duration-300'
                     />
                 </div>
                 <div>
                     <Image
                         alt=''
                         src="/ComponentsBannerImg/banner6.png"
-                        height={100}
-                        width={300}
-                        className='rounded-md hover:scale-105 duration-300'
+                        height={250}
+                        width={400}
+                        className='rounded hover:scale-105 duration-300'
                     />
                 </div>
                 <div>
                     <Image
                         alt=''
                         src="/ComponentsBannerImg/banner7.jpg"
-                        height={100}
-                        width={300}
-                        className='rounded-md hover:scale-105 duration-300'
+                        height={250}
+                        width={400}
+                        className='rounded hover:scale-105 duration-300'
                         draggable
                     />
                 </div>
