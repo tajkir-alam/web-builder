@@ -4,7 +4,8 @@ import useToggleMenu from '@/hooks/useToggleMenu/useToggleMenu';
 import dynamic from 'next/dynamic';
 import './TextEditor.css';
 
-import Quill from 'quill';
+// import Quill from 'quill';
+import { Quill } from 'react-quill';
 window.Quill = Quill;
 import ImageResize from 'quill-image-resize-module-react';
 Quill.register('modules/imageResize', ImageResize);
