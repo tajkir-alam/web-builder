@@ -4,6 +4,8 @@ import { increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
 import { AiOutlinePlus } from 'react-icons/ai';
 import SectionContainer from './SectionContainer';
 import { updateBannerImgSrc } from '@/redux/features/heroBannerImg/heroBannerImgSlice';
+import { motion } from "framer-motion"
+
 
 const MainBody = () => {
     const dispatch = useDispatch();
@@ -20,14 +22,24 @@ const MainBody = () => {
         const draggedItem = e.dataTransfer.getData('application/json');
         const parseDraggedItem = JSON.parse(draggedItem);
 
-        if (parseDraggedItem.path?.includes('ComponentsBannerImg')) {
+        if (parseDraggedItem.dragType === 'heroBannerImg') {
             dispatch(updateBannerImgSrc(parseDraggedItem.path));
         }
-      
-        
-        if (draggedItem === 'button1') {
-            console.log(draggedItem);
-            return;
+
+        if (parseDraggedItem.dragType === 'buttonComponent') {
+
+            const sectionContainer = document.getElementById('section-container');
+            const button = document.createElement('button');
+            const classNames = parseDraggedItem.className.split(' ');
+            classNames.forEach(className => {
+                button.classList.add(className);
+            });
+            // To position the button and making this visible.
+            button.classList.add('absolute');
+            button.textContent = 'Button';
+
+            sectionContainer.appendChild(button);
+
         }
 
         setIsDraggingOver(false);
@@ -41,7 +53,6 @@ const MainBody = () => {
     const handleDragLeave = () => {
         setIsDraggingOver(false);
     }
-
     return (
         <section className="secondary-bg py-[50px] px-[80px]">
             <h4 className='bg-[#2B2B2B] rounded-md text-white text-sm mb-8 py-3 ps-4'>Desktop</h4>
@@ -56,6 +67,7 @@ const MainBody = () => {
                         onDrop={handleDrop}
                         onDragOver={handleDragOver}
                         onDragLeave={handleDragLeave}
+                        id='section-container'
                         className={`relative w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300 ${isDraggingOver && 'border border-gray-400'}`}
                     >
                         <SectionContainer

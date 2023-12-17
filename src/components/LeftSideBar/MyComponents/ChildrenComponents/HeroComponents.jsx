@@ -23,6 +23,7 @@ const HeroComponents = ({ handleFlip }) => {
 
     const handleDragStart = (e, path) => {
         const newPath = {
+            dragType: 'heroBannerImg',
             path
         }
         e.dataTransfer.setData('application/json', JSON.stringify(newPath));
