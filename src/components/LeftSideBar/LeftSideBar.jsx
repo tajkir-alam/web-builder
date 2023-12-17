@@ -6,6 +6,7 @@ import ReactCardFlip from 'react-card-flip';
 import HeroComponents from './MyComponents/ChildrenComponents/HeroComponents';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import GoBackBtn from './GoBackBtn';
+import ButtonComponents from './MyComponents/ChildrenComponents/ButtonComponents';
 
 const LeftSideBar = () => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -45,7 +46,7 @@ const LeftSideBar = () => {
                             <HeroComponents handleFlip={handleFlip} />
                             :
                             selectedComponent === "Button" ?
-                                'sdsds'
+                                <ButtonComponents handleFlip={handleFlip} />
                                 :
 
                                 /* this is for go back to front part again */
