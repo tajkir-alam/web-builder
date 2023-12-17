@@ -21,7 +21,7 @@ const HeroComponents = ({ handleFlip }) => {
         dispatch((updateBannerImgSrc(path)));
     };
 
-    const handleDrag = (e, path) => {
+    const handleDragStart = (e, path) => {
         e.dataTransfer.setData('text/plain', path);
     }
 
@@ -34,7 +34,7 @@ const HeroComponents = ({ handleFlip }) => {
                     <div
                         key={index}
                         onClick={() => handleImageClick(path)}
-                        onDragStart={(e) => handleDrag(e, path)}
+                        onDragStart={(e) => handleDragStart(e, path)}
                     >
                         <Image
                             alt=''
