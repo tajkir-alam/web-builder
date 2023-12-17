@@ -28,18 +28,14 @@ const MainBody = () => {
 
         if (parseDraggedItem.dragType === 'buttonComponent') {
 
-            const sectionContainer = document.getElementById('section-container');
+            const componentContainer = document.getElementById('component-container');
             const button = document.createElement('button');
             const classNames = parseDraggedItem.className.split(' ');
             classNames.forEach(className => {
                 button.classList.add(className);
             });
-            // To position the button and making this visible.
-            button.classList.add('absolute');
             button.textContent = 'Button';
-
-            sectionContainer.appendChild(button);
-
+            componentContainer.appendChild(button);
         }
 
         setIsDraggingOver(false);
@@ -67,12 +63,24 @@ const MainBody = () => {
                         onDrop={handleDrop}
                         onDragOver={handleDragOver}
                         onDragLeave={handleDragLeave}
-                        id='section-container'
                         className={`relative w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300 ${isDraggingOver && 'border border-gray-400'}`}
                     >
                         <SectionContainer
                             _id={section._id}
                         />
+                        <motion.div
+                            drag
+                            dragConstraints={{
+                                top: -120,
+                                left: -220,
+                                right: 200,
+                                bottom: 200,
+                            }}
+                            id='component-container'
+                            className="absolute inset-y-1/3 left-[40%]"
+                        >
+
+                        </motion.div>
                     </div>
                 )
             }
