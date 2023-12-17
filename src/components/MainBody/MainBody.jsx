@@ -17,13 +17,14 @@ const MainBody = () => {
 
     const handleDrop = (e) => {
         e.preventDefault();
-        const draggedItem = e.dataTransfer.getData('text/plain');
+        const draggedItem = e.dataTransfer.getData('application/json');
+        const parseDraggedItem = JSON.parse(draggedItem);
         
         if (draggedItem === 'button1') {
             console.log(draggedItem);
             return;
         }
-        dispatch(updateBannerImgSrc(draggedItem));
+        dispatch(updateBannerImgSrc(parseDraggedItem));
         setIsDraggingOver(false);
     }
 
