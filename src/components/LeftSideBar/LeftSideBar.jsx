@@ -50,7 +50,10 @@ const LeftSideBar = () => {
                                 :
 
                                 /* this is for go back to front part again */
+                                <div className='flex flex-col items-center'>
+                                <p className='text-lg mb-2 text-red-200'>No components are found.</p>
                                 < GoBackBtn handleFlip={handleFlip} />
+                                </div>
                         }
                     </div>
                 </ReactCardFlip>

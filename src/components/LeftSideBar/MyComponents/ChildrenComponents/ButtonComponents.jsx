@@ -1,5 +1,5 @@
 import React from 'react';
-import GoBackBtn from '../../GoBackBtn';
+import ChildComponentsTitle from '../../ChildComponentsTitle';
 
 const ButtonComponents = ({ handleFlip }) => {
 
@@ -13,7 +13,8 @@ const ButtonComponents = ({ handleFlip }) => {
 
     return (
         <>
-            <h4 className='text-center mb-4'>Action Button</h4>
+            <ChildComponentsTitle handleFlip={handleFlip} title='Action Button' />
+            
             <div className="grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer">
                 <button
                     draggable
@@ -49,9 +50,6 @@ const ButtonComponents = ({ handleFlip }) => {
                     Button
                 </button>
             </div>
-
-            {/* this is for go back to front part again */}
-            <GoBackBtn handleFlip={handleFlip} />
         </>
     );
 };

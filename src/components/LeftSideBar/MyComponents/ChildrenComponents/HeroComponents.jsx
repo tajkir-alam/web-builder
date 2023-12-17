@@ -2,7 +2,7 @@ import React from 'react';
 import Image from "next/legacy/image";
 import { useDispatch } from 'react-redux';
 import { updateBannerImgSrc } from '@/redux/features/heroBannerImg/heroBannerImgSlice';
-import GoBackBtn from '../../GoBackBtn';
+import ChildComponentsTitle from '../../ChildComponentsTitle';
 
 const HeroComponents = ({ handleFlip }) => {
     const dispatch = useDispatch();
@@ -28,7 +28,8 @@ const HeroComponents = ({ handleFlip }) => {
 
     return (
         <>
-            <h4 className='text-center mb-4'>Hero Banner</h4>
+            <ChildComponentsTitle handleFlip={handleFlip} title='Hero Banner' />
+
             <div className="grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer">
                 {imagePaths.map((path, index) => (
                     <div
@@ -46,9 +47,6 @@ const HeroComponents = ({ handleFlip }) => {
                     </div>
                 ))}
             </div>
-
-            {/* this is for go back to front part again */}
-            <GoBackBtn handleFlip={handleFlip} />
         </>
     );
 };

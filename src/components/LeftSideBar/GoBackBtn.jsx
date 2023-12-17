@@ -3,15 +3,13 @@ import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const GoBackBtn = ({ handleFlip }) => {
     return (
-        <div className='text-center mt-5'>
-            <button
-                onClick={handleFlip}
-                className='bg-[#F1614A] py-[10px] px-[20px] text-[13px] hover:bg-[#F1994D] duration-100 rounded-md'
-            >
-                <AiOutlineArrowLeft className='font-semibold text-lg mr-2 inline' />
-                Go Back
-            </button>
-        </div>
+        <button
+            onClick={handleFlip}
+            className='bg-[#474747] hover:bg-[#3b3a3a] duration-100 rounded-full p-1 ml-2'
+        >
+            <AiOutlineArrowLeft className='font-semibold text-xl' />
+            {/* Go Back */}
+        </button>
     );
 };
 
