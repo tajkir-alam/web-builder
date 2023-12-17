@@ -45,7 +45,7 @@ const MainBody = () => {
                         onDrop={handleDrop}
                         onDragOver={handleDragOver}
                         onDragLeave={handleDragLeave}
-                        className={`relative my-8 w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300 ${isDraggingOver && 'border border-gray-400'}`}
+                        className={`relative w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300 ${isDraggingOver && 'border border-gray-400'}`}
                     >
                         <SectionContainer
                             _id={section._id}
