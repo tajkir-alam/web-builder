@@ -5,6 +5,7 @@ import BasicComponents from './BasicComponents/BasicComponents';
 import ReactCardFlip from 'react-card-flip';
 import HeroComponents from './MyComponents/ChildrenComponents/HeroComponents';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
+import GoBackBtn from './GoBackBtn';
 
 const LeftSideBar = () => {
     const [isFlipped, setIsFlipped] = useState(false);
@@ -46,16 +47,9 @@ const LeftSideBar = () => {
                             selectedComponent === "Button" ?
                                 'sdsds'
                                 :
-                                <div className='text-center space-y-3'>
-                                    <p>No components are found</p>
-                                    <button
-                                        onClick={handleFlip}
-                                        className='bg-[#F1614A] py-[10px] px-[20px] text-[13px] hover:bg-[#F1994D] duration-100 rounded-md'
-                                    >
-                                        <AiOutlineArrowLeft className='font-semibold text-lg mr-2 inline' />
-                                        Go Back
-                                    </button>
-                                </div>
+
+                                /* this is for go back to front part again */
+                                < GoBackBtn handleFlip={handleFlip} />
                         }
                     </div>
                 </ReactCardFlip>
