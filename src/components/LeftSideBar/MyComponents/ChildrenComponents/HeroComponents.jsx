@@ -23,7 +23,6 @@ const HeroComponents = ({ handleFlip }) => {
 
     const handleDragStart = (e, path) => {
         e.dataTransfer.setData('text/plain', path);
-        console.log('drag-start');
     }
 
 

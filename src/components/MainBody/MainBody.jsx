@@ -9,7 +9,7 @@ const MainBody = () => {
     const dispatch = useDispatch();
     const { sections } = useSelector((state) => state.sectionCount);
     const { textValue } = useSelector((state) => state.textEditor);
-    const [isDraggingOver, setIsDraggingOver] = useState(false);
+    const [isDraggingOver, setIsDraggingOver] = useState(false);        // -------> This is for dragging border effect. Not working after deployment but works on local.
 
     const sanitizedHTML = (html) => {
         return { __html: html };
@@ -20,18 +20,15 @@ const MainBody = () => {
         const updatePath = e.dataTransfer.getData('text/plain');
         dispatch(updateBannerImgSrc(updatePath));
         setIsDraggingOver(false);
-        console.log('drag-drop');
     }
 
     const handleDragOver = (e) => {
         e.preventDefault();
         setIsDraggingOver(true);
-        console.log('dragg-over');
     }
 
     const handleDragLeave = () => {
         setIsDraggingOver(false);
-        console.log('drag-leave');
     }
 
     return (
