@@ -38,7 +38,7 @@ const MainBody = () => {
 
     return (
         <section className="secondary-bg py-[50px] px-[80px]">
-            <h4 className='bg-[#2B2B2B] rounded-md text-sm mb-8 py-3 ps-4'>Desktop</h4>
+            <h4 className='bg-[#2B2B2B] rounded-md text-white text-sm mb-8 py-3 ps-4'>Desktop</h4>
 
             <p dangerouslySetInnerHTML={sanitizedHTML(textValue)} className='my-8'></p>
 
@@ -60,7 +60,7 @@ const MainBody = () => {
             }
 
             {/* Add Section container */}
-            <div className='relative border border-[#5D96FF] h-36 w-full rounded-sm'>
+            <div className='relative border border-[#5D96FF] h-36 w-full rounded-sm text-white'>
                 <button onClick={() => dispatch(increaseCount())} className='absolute -top-4 right-4 p-2 bg-[#5D96FF] rounded-full hover:bg-[#719df0] duration-300'>
                     <AiOutlinePlus />
                 </button>

@@ -57,7 +57,7 @@ const RightSideBar = () => {
     };
 
     return (
-        <div className='primary-bg min-h-screen py-[25px] px-[15px] overflow-hidden'>
+        <div className='primary-bg min-h-screen py-[25px] px-[15px] overflow-hidden text-white'>
             <div className='mb-4 flex items-center justify-between'>
                 <h5>Basic Components</h5>
                 <button onClick={showComponentMenu}>
@@ -92,7 +92,7 @@ const RightSideBar = () => {
                         </button>
                     </div>
                 </div>
-                <p className='text-sm text-[#707070]'>
+                <p className='text-sm text-[#949393]'>
                     Allow rich text editing inline on the page by double clicking on text blocks.
                 </p>
             </div>

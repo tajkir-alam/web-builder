@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Provider store={store}>
       <Header />
-      <main className="grid grid-cols-[2.5fr_7fr_2.5fr] text-white h-screen">
+      <main className="grid grid-cols-[2.5fr_7fr_2.5fr] min-h-screen">
         <LeftSideBar />
         <MainBody />
         <RightSideBar />

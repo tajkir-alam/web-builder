@@ -66,7 +66,7 @@ const SectionContainer = ({ _id }) => {
                     dragConstraints={dragConstraints}
                     className='content-border'
                 >
-                    <button className='bg-[#536136] hover:bg-[#627241] py-[6px] text-sm px-[14px] rounded capitalize duration-300 active:scale-95'>
+                    <button className='bg-[#536136] hover:bg-[#627241] py-[6px] text-white text-sm px-[14px] rounded capitalize duration-300 active:scale-95'>
                         Shop Gifts
                     </button>
                 </motion.div>
