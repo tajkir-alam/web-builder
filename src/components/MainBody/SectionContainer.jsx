@@ -36,6 +36,7 @@ const SectionContainer = ({ _id }) => {
                 alt='Hero'
                 layout='fill'
                 src={bannerImgSrc}
+                draggable={false}
             />
 
             <div className='absolute text-center inset-y-1/4 w-2/5 left-[30%]'>
