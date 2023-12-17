@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
 import { AiOutlinePlus } from 'react-icons/ai';
@@ -9,6 +9,7 @@ const MainBody = () => {
     const dispatch = useDispatch();
     const { sections } = useSelector((state) => state.sectionCount);
     const { textValue } = useSelector((state) => state.textEditor);
+    const [isDraggingOver, setIsDraggingOver] = useState(false);
 
     const sanitizedHTML = (html) => {
         return { __html: html };
@@ -18,10 +19,16 @@ const MainBody = () => {
         e.preventDefault();
         const updatePath = e.dataTransfer.getData('text/plain');
         dispatch(updateBannerImgSrc(updatePath));
+        setIsDraggingOver(false);
     }
 
     const handleDragOver = (e) => {
         e.preventDefault();
+        setIsDraggingOver(true);
+    }
+
+    const handleDragLeave = () => {
+        setIsDraggingOver(false);
     }
 
     return (
@@ -37,7 +44,8 @@ const MainBody = () => {
                         key={section._id}
                         onDrop={handleDrop}
                         onDragOver={handleDragOver}
-                        className='relative my-8 w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300'
+                        onDragLeave={handleDragLeave}
+                        className={`relative my-8 w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300 ${isDraggingOver && 'border border-gray-400'}`}
                     >
                         <SectionContainer
                             _id={section._id}
