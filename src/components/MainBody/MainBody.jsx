@@ -20,15 +20,18 @@ const MainBody = () => {
         const updatePath = e.dataTransfer.getData('text/plain');
         dispatch(updateBannerImgSrc(updatePath));
         setIsDraggingOver(false);
+        console.log('drag-drop');
     }
 
     const handleDragOver = (e) => {
         e.preventDefault();
         setIsDraggingOver(true);
+        console.log('dragg-over');
     }
 
     const handleDragLeave = () => {
         setIsDraggingOver(false);
+        console.log('drag-leave');
     }
 
     return (
