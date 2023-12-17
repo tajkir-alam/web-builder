@@ -22,7 +22,10 @@ const HeroComponents = ({ handleFlip }) => {
     };
 
     const handleDragStart = (e, path) => {
-        e.dataTransfer.setData('application/json', JSON.stringify(path));
+        const newPath = {
+            path
+        }
+        e.dataTransfer.setData('application/json', JSON.stringify(newPath));
     }
 
 

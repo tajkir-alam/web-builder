@@ -19,12 +19,17 @@ const MainBody = () => {
         e.preventDefault();
         const draggedItem = e.dataTransfer.getData('application/json');
         const parseDraggedItem = JSON.parse(draggedItem);
+
+        if (parseDraggedItem.path?.includes('ComponentsBannerImg')) {
+            dispatch(updateBannerImgSrc(parseDraggedItem.path));
+        }
+      
         
         if (draggedItem === 'button1') {
             console.log(draggedItem);
             return;
         }
-        dispatch(updateBannerImgSrc(parseDraggedItem));
+
         setIsDraggingOver(false);
     }
 

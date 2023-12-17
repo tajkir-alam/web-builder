@@ -6,7 +6,7 @@ const ButtonComponents = ({ handleFlip }) => {
     const handleDragStart = (e, buttonType) => {
         const buttonInfo = {
             buttonType,
-            element: e.target.cloneNode(true)
+            element: e.target.cloneNode(true).outerHTML
         }
         e.dataTransfer.setData('application/json', JSON.stringify(buttonInfo));
     }
