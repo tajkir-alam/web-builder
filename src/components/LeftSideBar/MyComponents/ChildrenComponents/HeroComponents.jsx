@@ -21,12 +21,21 @@ const HeroComponents = ({ handleFlip }) => {
         dispatch((updateBannerImgSrc(path)));
     };
 
+    const handleDrag = (e, path) => {
+        e.dataTransfer.setData('text/plain', path);
+    }
+
+
     return (
         <>
             <h4 className='text-center mb-4'>Hero Banner</h4>
             <div className="grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer">
                 {imagePaths.map((path, index) => (
-                    <div key={index} onClick={() => handleImageClick(path)}>
+                    <div
+                        key={index}
+                        onClick={() => handleImageClick(path)}
+                        onDragStart={(e) => handleDrag(e, path)}
+                    >
                         <Image
                             alt=''
                             src={path}

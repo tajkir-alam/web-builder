@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
 import { AiOutlinePlus } from 'react-icons/ai';
 import SectionContainer from './SectionContainer';
+import { updateBannerImgSrc } from '@/redux/features/heroBannerImg/heroBannerImgSlice';
 
 const MainBody = () => {
     const dispatch = useDispatch();
@@ -13,6 +14,16 @@ const MainBody = () => {
         return { __html: html };
     };
 
+    const handleDrop = (e) => {
+        e.preventDefault();
+        const updatePath = e.dataTransfer.getData('text/plain');
+        dispatch(updateBannerImgSrc(updatePath));
+    }
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <section className="secondary-bg py-[50px] px-[80px]">
             <h4 className='bg-[#2B2B2B] rounded-md text-sm mb-8 py-3 ps-4'>Desktop</h4>
@@ -22,7 +33,12 @@ const MainBody = () => {
             {/* Sections */}
             {
                 sections.map((section) =>
-                    <div key={section._id} className='my-8 relative w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300'>
+                    <div
+                        key={section._id}
+                        onDrop={handleDrop}
+                        onDragOver={handleDragOver}
+                        className='relative my-8 w-full h-96 group border-[3px] border-transparent hover:border-gray-400 duration-300'
+                    >
                         <SectionContainer
                             _id={section._id}
                         />
