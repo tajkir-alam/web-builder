@@ -5,15 +5,10 @@ import BasicComponents from './BasicComponents/BasicComponents';
 import ReactCardFlip from 'react-card-flip';
 import HeroComponents from './MyComponents/ChildrenComponents/HeroComponents';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
+import useHandleFlip from '@/hooks/useHandleFlip/useHandleFlip';
 
 const LeftSideBar = () => {
-    const [isFlipped, setIsFlipped] = useState(false);
-    const [selectedComponent, setSelectedComponent] = useState(null);
-
-    const handleFlip = (component) => {
-        setIsFlipped((prevIsFlipped) => !prevIsFlipped);
-        setSelectedComponent(component);
-    };
+    const { isFlipped, selectedComponent, handleFlip } = useHandleFlip();
 
     return (
         <div className='primary-bg min-h-screen py-[25px] px-[15px]'>
@@ -35,7 +30,7 @@ const LeftSideBar = () => {
 
                         <hr className='my-[26px] border-[#797979]' />
 
-                        <BasicComponents />
+                        <BasicComponents handleFlip={handleFlip} />
                     </div>
 
                     {/* This div belongs to back components */}
