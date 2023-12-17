@@ -2,11 +2,18 @@ import React from 'react';
 import GoBackBtn from '../../GoBackBtn';
 
 const ButtonComponents = ({ handleFlip }) => {
+    const handleDragStart = (e, buttonType) => {
+        e.dataTransfer.setData('text/plain', buttonType);
+        console.log(buttonType);
+    }
+
     return (
         <>
             <h4 className='text-center mb-4'>Action Button</h4>
             <div className="grid grid-cols-2 gap-2 py-3 px-2 cursor-pointer">
                 <button
+                    draggable
+                    onDragStart={(e) => handleDragStart(e, 'button1')}
                     className='bg-[#F1614A] hover:bg-[#F1994D] py-[10px] px-[20px] text-[13px] duration-100 rounded-md'
                 >
                     Button

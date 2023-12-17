@@ -13,11 +13,6 @@ const SectionContainer = ({ _id }) => {
     const { bannerImgSrc } = useSelector((state) => state.heroBannerImg);
 
     // Utility function to strip HTML tags
-    const stripHtmlTag = (htmlString) => {
-        const doc = new DOMParser().parseFromString(htmlString, 'text/html');
-        return doc.body.textContent || "";
-    };
-
     const stripHtmlTags = (htmlString) => {
         const removeTags = new DOMParser().parseFromString(htmlString, 'text/html');
         return removeTags.body.textContent || "Here’s to Joy";
