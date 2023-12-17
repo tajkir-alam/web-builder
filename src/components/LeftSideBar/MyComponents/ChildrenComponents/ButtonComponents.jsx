@@ -2,9 +2,13 @@ import React from 'react';
 import GoBackBtn from '../../GoBackBtn';
 
 const ButtonComponents = ({ handleFlip }) => {
+
     const handleDragStart = (e, buttonType) => {
-        e.dataTransfer.setData('text/plain', buttonType);
-        console.log(buttonType);
+        const buttonInfo = {
+            buttonType,
+            element: e.target.cloneNode(true)
+        }
+        e.dataTransfer.setData('application/json', JSON.stringify(buttonInfo));
     }
 
     return (

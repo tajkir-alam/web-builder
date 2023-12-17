@@ -18,6 +18,7 @@ const MainBody = () => {
     const handleDrop = (e) => {
         e.preventDefault();
         const draggedItem = e.dataTransfer.getData('text/plain');
+        
         if (draggedItem === 'button1') {
             console.log(draggedItem);
             return;
