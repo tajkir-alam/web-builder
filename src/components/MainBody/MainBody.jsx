@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
 import { AiOutlinePlus } from 'react-icons/ai';
@@ -12,35 +12,27 @@ const MainBody = () => {
     const { sections } = useSelector((state) => state.sectionCount);
     const { textValue } = useSelector((state) => state.textEditor);
     const [isDraggingOver, setIsDraggingOver] = useState(false);        // -------> This is for dragging border effect. Not working after deployment but works on local.
+    const [appendedElement, setAppendedElement] = useState([]);
 
     const sanitizedHTML = (html) => {
         return { __html: html };
     };
-
     const handleDrop = (e) => {
         e.preventDefault();
         const draggedItem = e.dataTransfer.getData('application/json');
         const parseDraggedItem = JSON.parse(draggedItem);
 
+        // Hero Banner Components
         if (parseDraggedItem.dragType === 'heroBannerImg') {
             dispatch(updateBannerImgSrc(parseDraggedItem.path));
         }
 
+        // Button Components
         if (parseDraggedItem.dragType === 'buttonComponent') {
-
-            const componentContainer = document.getElementById('component-container');
-            const button = document.createElement('button');
-            const classNames = parseDraggedItem.className.split(' ');
-            classNames.forEach(className => {
-                button.classList.add(className);
-            });
-            button.textContent = 'Button';
-            componentContainer.appendChild(button);
+            setAppendedElement([...appendedElement, parseDraggedItem.className]);
         }
-
         setIsDraggingOver(false);
     }
-
     const handleDragOver = (e) => {
         e.preventDefault();
         setIsDraggingOver(true);
@@ -49,6 +41,7 @@ const MainBody = () => {
     const handleDragLeave = () => {
         setIsDraggingOver(false);
     }
+
     return (
         <section className="secondary-bg py-[50px] px-[80px]">
             <h4 className='bg-[#2B2B2B] rounded-md text-white text-sm mb-8 py-3 ps-4'>Desktop</h4>
@@ -68,19 +61,24 @@ const MainBody = () => {
                         <SectionContainer
                             _id={section._id}
                         />
-                        <motion.div
-                            drag
-                            dragConstraints={{
-                                top: -120,
-                                left: -220,
-                                right: 200,
-                                bottom: 200,
-                            }}
-                            id='component-container'
-                            className="absolute inset-y-1/3 left-[40%]"
-                        >
+                        {
+                            appendedElement.map((elementClass, index) =>
+                                <motion.button
+                                    key={index}
+                                    drag
+                                    dragConstraints={{
+                                        top: -120,
+                                        left: -220,
+                                        right: 200,
+                                        bottom: 200,
+                                    }}
+                                    className={`absolute inset-y-1/3 left-[40%] cursor-move h-fit ${elementClass}`}
+                                >
+                                    Button
+                                </motion.button>
+                            )
+                        }
 
-                        </motion.div>
                     </div>
                 )
             }

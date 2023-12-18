@@ -40,7 +40,7 @@ const SectionContainer = ({ _id }) => {
                     dragConstraints={dragConstraints}
                     // value={stripHtmlTags(textValue)}
                     // onChange={(e) => dispatch(updatedText(e.target.value))}
-                    className='content-border bg-transparent capitalize text-[13.412px] text-[#69764A] font-semibold focus:outline-none py-1 px-2'
+                    className='component-border bg-transparent capitalize text-[13.412px] text-[#69764A] font-semibold focus:outline-none py-1 px-2'
                 >
                     gift guide
                 </motion.p>
@@ -50,13 +50,13 @@ const SectionContainer = ({ _id }) => {
                     dragConstraints={dragConstraints}
                     value={stripHtmlTags(textValue)}
                     onChange={(e) => dispatch(updatedText(e.target.value))}
-                    className='content-border bg-transparent text-[36.224px] text-[#536136] w-full font-bold my-[2px] focus:outline-none py-1 px-2'
+                    className='component-border bg-transparent text-[36.224px] text-[#536136] w-full font-bold my-[2px] focus:outline-none py-1 px-2'
                 />
 
                 <motion.p
                     drag
                     dragConstraints={dragConstraints}
-                    className='content-border text-[8.567px] text-[#7A8365] mb-[14px]'
+                    className='component-border text-[8.567px] text-[#7A8365] mb-[14px]'
                 >
                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
                 </motion.p>
@@ -64,7 +64,7 @@ const SectionContainer = ({ _id }) => {
                 <motion.div
                     drag
                     dragConstraints={dragConstraints}
-                    className='content-border'
+                    className='component-border'
                 >
                     <button className='bg-[#536136] hover:bg-[#627241] py-[6px] text-white text-sm px-[14px] rounded capitalize duration-300 active:scale-95'>
                         Shop Gifts
