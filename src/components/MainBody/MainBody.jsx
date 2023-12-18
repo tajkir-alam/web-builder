@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { increaseCount } from '@/redux/features/sectionCount/sectionCountSlice';
 import { AiOutlinePlus } from 'react-icons/ai';
@@ -43,6 +43,12 @@ const MainBody = () => {
         setIsDraggingOver(false);
     }
 
+    const handleDelete = (index) => {
+        const updatedAppendedElement = [...appendedElement];
+        updatedAppendedElement.splice(index, 1);
+        setAppendedElement(updatedAppendedElement);
+    }
+
     return (
         <section className="secondary-bg py-[50px] px-[80px]">
             <h4 className='bg-[#2B2B2B] rounded-md text-white text-sm mb-8 py-3 ps-4'>Desktop</h4>
@@ -76,7 +82,9 @@ const MainBody = () => {
                                     className={`absolute inset-y-1/3 left-[40%] cursor-move h-fit button-component-dlt_Icon ${elementClass}`}
                                 >
                                     Button
-                                    <span className="relative opacity-0 duration-300">
+                                    <span
+                                        onClick={() => handleDelete(index)}
+                                        className="relative opacity-0 duration-300">
                                         {/* Section remove button */}
                                         <span
                                             className='absolute -top-7 -right-7 cursor-pointer text-xs p-2 bg-[#F1614A] rounded-full hover:bg-[#719df0]'>
@@ -86,7 +94,6 @@ const MainBody = () => {
                                 </motion.button>
                             )
                         }
-
                     </div>
                 )
             }
