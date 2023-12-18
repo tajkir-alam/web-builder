@@ -18,7 +18,7 @@ const LeftSideBar = () => {
     };
 
     return (
-        <div className='primary-bg min-h-screen py-[25px] px-[15px] text-white'>
+        <div className='primary-bg min-h-screen py-[25px] px-[15px] text-white hidden md:block'>
             <div className='relative'>
                 <input
                     type="text"

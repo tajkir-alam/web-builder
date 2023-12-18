@@ -34,7 +34,7 @@ const SectionContainer = ({ _id }) => {
                 draggable={false}
             />
 
-            <div className='absolute text-center inset-y-1/4 w-2/5 left-[30%]'>
+            <div className='absolute text-center inset-y-1/4 w-full md:w-2/5 md:left-[30%] px-2 md:px-0'>
                 <motion.p
                     drag
                     dragConstraints={dragConstraints}
@@ -50,7 +50,7 @@ const SectionContainer = ({ _id }) => {
                     dragConstraints={dragConstraints}
                     value={stripHtmlTags(textValue)}
                     onChange={(e) => dispatch(updatedText(e.target.value))}
-                    className='component-border bg-transparent text-[36.224px] text-[#536136] w-full font-bold my-[2px] focus:outline-none py-1 px-2'
+                    className='component-border bg-transparent text-xl md:text-[36.224px] text-[#536136] w-full font-bold my-[2px] focus:outline-none py-1 px-2'
                 />
 
                 <motion.p

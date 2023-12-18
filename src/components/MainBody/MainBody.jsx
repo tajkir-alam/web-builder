@@ -50,8 +50,9 @@ const MainBody = () => {
     }
 
     return (
-        <section className="secondary-bg py-[50px] px-[80px]">
-            <h4 className='bg-[#2B2B2B] rounded-md text-white text-sm mb-8 py-3 ps-4'>Desktop</h4>
+        <section className="secondary-bg py-[50px] px-2 md:px-[80px]">
+            <h4 className='bg-[#2B2B2B] rounded-md text-white text-sm mb-8 py-3 ps-4 md:hidden'>Mobile</h4>
+            <h4 className='bg-[#2B2B2B] rounded-md text-white text-sm mb-8 py-3 ps-4 hidden md:block'>Desktop</h4>
 
             <p dangerouslySetInnerHTML={sanitizedHTML(textValue)} className='my-8'></p>
 

@@ -57,7 +57,7 @@ const RightSideBar = () => {
     };
 
     return (
-        <div className='primary-bg min-h-screen py-[25px] px-[15px] overflow-hidden text-white'>
+        <div className='primary-bg min-h-screen py-[25px] px-[15px] overflow-hidden text-white hidden md:block'>
             <div className='mb-4 flex items-center justify-between'>
                 <h5>Basic Components</h5>
                 <button onClick={showComponentMenu}>
