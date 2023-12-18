@@ -79,6 +79,7 @@ const MainBody = () => {
                                         right: 200,
                                         bottom: 200,
                                     }}
+                                    animate={{ y: index * 20, x: index * 20 }}
                                     className={`absolute inset-y-1/3 left-[40%] cursor-move h-fit button-component-dlt_Icon ${elementClass}`}
                                 >
                                     Button
