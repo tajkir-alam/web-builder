@@ -73,13 +73,13 @@ const MainBody = () => {
                                         right: 200,
                                         bottom: 200,
                                     }}
-                                    className={`absolute inset-y-1/3 left-[40%] cursor-move h-fit ${elementClass}`}
+                                    className={`absolute inset-y-1/3 left-[40%] cursor-move h-fit button-component-dlt_Icon ${elementClass}`}
                                 >
                                     Button
-                                    <span className="relative">
+                                    <span className="relative opacity-0 duration-300">
                                         {/* Section remove button */}
                                         <span
-                                            className='absolute -top-7 -right-7 cursor-pointer text-xs p-2 bg-[#F1614A] rounded-full hover:bg-[#719df0] opacity-0 hover:opacity-100 duration-300'>
+                                            className='absolute -top-7 -right-7 cursor-pointer text-xs p-2 bg-[#F1614A] rounded-full hover:bg-[#719df0]'>
                                             <HiOutlineTrash />
                                         </span>
                                     </span>

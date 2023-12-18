@@ -11,9 +11,14 @@
 }
 
 .component-border {
-    @apply border border-transparent rounded-sm duration-500 py-[2px] cursor-move; 
+    @apply border border-transparent rounded-sm duration-500 py-[2px] cursor-move;
 }
 
 .component-border:hover {
     @apply border-gray-400;
+}
+
+
+.button-component-dlt_Icon:hover>span {
+    opacity: 1;
 }
