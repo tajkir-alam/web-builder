@@ -5,6 +5,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import SectionContainer from './SectionContainer';
 import { updateBannerImgSrc } from '@/redux/features/heroBannerImg/heroBannerImgSlice';
 import { motion } from "framer-motion"
+import { HiOutlineTrash } from 'react-icons/hi2';
 
 
 const MainBody = () => {
@@ -75,6 +76,13 @@ const MainBody = () => {
                                     className={`absolute inset-y-1/3 left-[40%] cursor-move h-fit ${elementClass}`}
                                 >
                                     Button
+                                    <span className="relative">
+                                        {/* Section remove button */}
+                                        <span
+                                            className='absolute -top-7 -right-7 cursor-pointer text-xs p-2 bg-[#F1614A] rounded-full hover:bg-[#719df0] opacity-0 hover:opacity-100 duration-300'>
+                                            <HiOutlineTrash />
+                                        </span>
+                                    </span>
                                 </motion.button>
                             )
                         }
